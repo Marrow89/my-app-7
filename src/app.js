@@ -41,14 +41,6 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&app
 axios.get(apiUrl).then(showTemperature);
 }
 
-function searchCity(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector("#city-input").value;
-let apiKey = "6bfa54f242cbb59343d4e58db578dc61";
-let units = "metric";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=${units}`;
-axios.get(apiUrl).then(showTemperature);
-}
 
 function handleLocation(coordinates){
   let cityInput = document.querySelector("#city-input").value;
