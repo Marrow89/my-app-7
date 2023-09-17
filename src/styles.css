@@ -63,6 +63,13 @@ li {
     position: relative;
     top: -12px;
 }
+.weather-temperature .active {
+    color: #000;
+    cursor: default;
+}
+.weather-temperature .active:hover {
+    text-decoration: none;
+}
 .description {
     font-display: uppercase;
 
