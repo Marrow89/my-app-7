@@ -42,11 +42,11 @@ axios.get(apiUrl).then(showTemperature);
 
 function handleLocation(coordinates){
   let cityInput = document.querySelector("#city-input").value;
-}
+
   let apiKey = "6bfa54f242cbb59343d4e58db578dc61";
  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.coords.latitude}&lon=${coordinates.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
-
+}
 
 navigator.geolocation.getCurrentPosition(handleLocation);
 
