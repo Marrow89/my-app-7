@@ -41,8 +41,7 @@ axios.get(apiUrl).then(showTemperature);
 
 function handleLocation(coordinates){
   let cityInput = document.querySelector("#city-input").value;
-
-  let apiKey = "6bfa54f242cbb59343d4e58db578dc61";
+let apiKey = "6bfa54f242cbb59343d4e58db578dc61";
  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.coords.latitude}&lon=${coordinates.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
 }
@@ -67,7 +66,7 @@ windElement.innerHTML =Math.round(response.data.wind.speed);
 cityInput.innerHTML = response.data.name;
 descriptionElement.innerHTML = response.data.weather[0].description;
 humidityElement.innerHTML = response.data.main.humidity;
-dateElement.innerHTML = currentDayElement(response.data.dt * 1000);
+dateElement.innerHTML = currentDayElement(response.data.dt);
 iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 iconElement.setAttribute("alt", response.data.weather[0].description);
 h1.innerHTML = `It is currently ${temperature}° in ${response.data.name}`;
