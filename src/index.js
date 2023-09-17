@@ -52,7 +52,7 @@ navigator.geolocation.getCurrentPosition(handleLocation);
 
 
 function showTemperature(response) {
-  console.log(response.data);
+
   let h1 = document.querySelector("h1");
   let temperature = Math.round(response.data.main.temp);
   let cityInput = response.data.name;
@@ -68,8 +68,8 @@ temperature.innerHTML = Math.round(response.data.main.temp);
 
 iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 iconElement.setAttribute("alt", response.data.weather[0].description);
-h1.innerHTML = `It is currently ${temperature}° in ${response.data.name}`;
-
+h1.innerHTML = `${response.data.name}`;
+strongElement.innerHTML = `${temperature}°`;
 }
 
 let form = document.querySelector("#control-form");
