@@ -61,7 +61,7 @@ function showTemperature(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
-  let dayElement = document.querySelector("#currentDay";)
+  let dayElement = document.querySelector("#currentDay");
 
 windElement.innerHTML =Math.round(response.data.wind.speed);
 cityInput.innerHTML = response.data.name;
