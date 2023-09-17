@@ -75,7 +75,10 @@ strongElement.innerHTML = `${temperature}`;
 
 function displayFahrenheitTemperature(event) {
 event.preventDefault();
-alert("It works");
+let fahrenheitTemperature = (13 * 9) / 5 + 32;
+alert(fahrenheitTemperature);
+let temperatureElement = document.querySelector("#temperature");
+temperatureElement.innerHTML = fahrenheitTemperature;
 }
 
 let form = document.querySelector("#control-form");
