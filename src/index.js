@@ -59,15 +59,12 @@ function showTemperature(response) {
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-  let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
-  let dayElement = document.querySelector("#currentDay");
+  windElement.innerHTML =Math.round(response.data.wind.speed);
+  cityInput.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
 
-windElement.innerHTML =Math.round(response.data.wind.speed);
-cityInput.innerHTML = response.data.name;
-descriptionElement.innerHTML = response.data.weather[0].description;
-humidityElement.innerHTML = response.data.main.humidity;
-dayElement.innerHTML = dayElement(response.data.dt);
 iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 iconElement.setAttribute("alt", response.data.weather[0].description);
 h1.innerHTML = `It is currently ${temperature}° in ${response.data.name}`;
