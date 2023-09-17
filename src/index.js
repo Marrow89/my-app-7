@@ -60,6 +60,7 @@ function showTemperature(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
+  let strongElement = document.querySelector("#temperature");
   windElement.innerHTML =Math.round(response.data.wind.speed);
   cityInput.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
