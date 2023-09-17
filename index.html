@@ -39,25 +39,28 @@
         <span id="currentDay"></span>
         <span id="currentHour"></span>
         <span id="currentMinute"></span>
+
         <div class="rows">
           <div class="col-6">
-            <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" 
-            alt="Sunny"/>
-           
+            <div class="d-flex weather-temperature">
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                alt="Sunny"
+                id="icon"
+              />
+              <div>
+                <strong id="temperature"></strong><span class="units"> °C</span>
+              </div>
+            </div>
+          </div>
         </div>
-<div class="col-6">
-  <ul>
-    <li>
-      Precipitation: 0%
-    </li>
-    <li>
-      Humidity: 0%
-    </li>
-    <li>
-      Wind Speed: 1 km/h
-    </li>
-  </ul>
-</div>
+        <div class="col-6">
+          <ul>
+            <li>Precipitation: 0%</li>
+            <li>Humidity: 0%</li>
+            <li>Wind Speed: 1 km/h</li>
+          </ul>
+        </div>
         <div class="row">
           <div class="card" style="width: 80px">
             <div class="card-body-sm">
@@ -95,7 +98,9 @@
       </div>
     </div>
     <small>
-    <a href="https://github.com/Marrow89/my-app-7.git" target="_blank">Coded by Larissa Snell, Hosted on GitHub</a>
+      <a href="https://github.com/Marrow89/my-app-7.git" target="_blank"
+        >Coded by Larissa Snell, Hosted on GitHub</a
+      >
     </small>
     <script src="src/index.js"></script>
   </body>
