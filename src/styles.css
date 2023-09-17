@@ -56,8 +56,13 @@ li {
     font-size: 36px;
     line-height: 1;
     font-weight: 400;
+    padding: 20px;
 }
 .weather-temperature .units {
     position: relative;
     top: -12px;
+}
+.description {
+    font-display: uppercase;
+
 }

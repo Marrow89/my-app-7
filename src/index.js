@@ -70,7 +70,7 @@ temperature.innerHTML = Math.round(response.data.main.temp);
 iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 iconElement.setAttribute("alt", response.data.weather[0].description);
 h1.innerHTML = `${response.data.name}`;
-strongElement.innerHTML = `${temperature}°`;
+strongElement.innerHTML = `${temperature}`;
 }
 
 let form = document.querySelector("#control-form");
