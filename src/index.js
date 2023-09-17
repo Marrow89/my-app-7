@@ -56,8 +56,14 @@ navigator.geolocation.getCurrentPosition(handleLocation);
 function showTemperature(response) {
   console.log(response.data);
   let h1 = document.querySelector("h1");
-  let temperature = Math.round(response.data.main.temp);
+  let temperature = document.querySelector("#temperature");
   let cityInput = response.data.name;
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+temperatureElement.innerHTML = Math.round(response.data.main.temp);
+cityElement.innerHTML = response.data.name;
+descriptionElement.innerHTML = response.data.weather[0].description;
+humidityElement.innerHTML = response.data.main.humidity;
   h1.innerHTML = `It is currently ${temperature}° in ${response.data.name}`;
 }
 
