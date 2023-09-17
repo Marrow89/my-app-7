@@ -49,6 +49,7 @@ li {
     background: #000;
 }
 .link {
+    position: relative;
     text-align: center;
 }
 .weather-temperature strong {
