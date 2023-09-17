@@ -84,5 +84,5 @@ temperatureElement.innerHTML = fahrenheitTemperature;
 let form = document.querySelector("#control-form");
 form.addEventListener("submit", searchCity);
 
-let fahrenheitLink = document.querySelector("#fahrenheir-link");
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
