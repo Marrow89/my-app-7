@@ -34,20 +34,19 @@ function showTemperature(response) {
 
   let h1 = document.querySelector("h1");
   let temperature = Math.round(response.data.main.temp);
-  let cityInput = response.data.name;
+  let cityInput = document.querySelector("#city-input");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
   let strongElement = document.querySelector("#temperature");
-
-  celsiusTemperature = response.data.main.temp;
+  let celsiusTemperature = Math.round(response.data.main.temp);
 
   windElement.innerHTML =Math.round(response.data.wind.speed);
   cityInput.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
-temperature.innerHTML = Math.round(celsiusTemperature);
+  temperature.innerHTML = Math.round(celsiusTemperature);
 
 iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 iconElement.setAttribute("alt", response.data.weather[0].description);
