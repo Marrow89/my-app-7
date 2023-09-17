@@ -30,8 +30,6 @@ function currentDate(now) {
 let now = new Date();
 currentDate(now);
 
-
-
 function searchCity(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input").value;
