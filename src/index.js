@@ -1,6 +1,7 @@
 function currentDate(now) {
   let currentDay = now.getDay();
   let currentHour = now.getHours();
+  let day = date.getDay();
   if(currentHour < 10) {
     currentHour = `0${currentHour}`;
   }
@@ -8,6 +9,7 @@ function currentDate(now) {
   if(currentMinute < 10) {
     currentMinute = `0${currentMinute}`;
   }
+  return `${currentDay} ${currentHour}:${currentMinute}`;
 
   let days = [
     "Sunday",
