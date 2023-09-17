@@ -73,5 +73,13 @@ h1.innerHTML = `${response.data.name}`;
 strongElement.innerHTML = `${temperature}`;
 }
 
+function displayFahrenheitTemperature(event) {
+event.preventDefault();
+alert("It works");
+}
+
 let form = document.querySelector("#control-form");
 form.addEventListener("submit", searchCity);
+
+let fahrenheitLink = document.querySelector("fahrenheir-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
