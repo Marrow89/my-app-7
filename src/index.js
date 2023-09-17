@@ -1,8 +1,7 @@
 function currentDate(now) {
   let currentDay = now.getDay();
   let currentHour = now.getHours();
-
-  if(currentHour < 10) {
+ if(currentHour < 10) {
     currentHour = `0${currentHour}`;
   }
   let currentMinute = now.getMinutes();
@@ -62,12 +61,18 @@ function showTemperature(response) {
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
+  let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
 
 windElement.innerHTML =Math.round(response.data.wind.speed);
 cityInput.innerHTML = response.data.name;
 descriptionElement.innerHTML = response.data.weather[0].description;
 humidityElement.innerHTML = response.data.main.humidity;
-  h1.innerHTML = `It is currently ${temperature}° in ${response.data.name}`;
+dateElement.innerHTML = currentDate(response.data.dt * 1000);
+iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+iconElement.setAttribute("alt", response.data.weather[0].description);
+h1.innerHTML = `It is currently ${temperature}° in ${response.data.name}`;
+
 }
 
 let form = document.querySelector("#control-form");
