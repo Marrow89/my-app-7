@@ -79,7 +79,6 @@ strongElement.innerHTML = `${temperature}`;
 function displayFahrenheitTemperature(event) {
 event.preventDefault();
 let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
-alert(fahrenheitTemperature);
 let temperatureElement = document.querySelector("#temperature");
 temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
