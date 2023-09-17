@@ -51,3 +51,8 @@ li {
 .link {
     text-align: center;
 }
+.weather-temperature strong {
+    font-size: 36px;
+    line-height: 1;
+    
+}
