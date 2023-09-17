@@ -28,8 +28,7 @@ function currentDate(now) {
   let currentMinuteElement = document.getElementById("currentMinute");
   currentMinuteElement.textContent = currentMinute;
 }
-let now = new Date();
-currentDate(now);
+
 
 function searchCity(event) {
   event.preventDefault();
