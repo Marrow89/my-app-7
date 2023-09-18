@@ -58,8 +58,8 @@ strongElement.innerHTML = `${temperature}`;
 
 function searchCity(city) {
 let cityInput = document.querySelector("#city-input").value;
-let apiKey = "95fccd7ba44d9b658ta47a02aa43bo69";
-let apiUrl =`https://api.shecodes.io/weather/v1/current?query=${cityInput}&${apiKey}=95fccd7ba44d9b658ta47a02aa43bo69&units=metric`;
+let apiKey = "e6c2364656962bdcb16bc352fc42569a";
+let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
 
  axios.get(apiUrl).then(showTemperature);
 }
