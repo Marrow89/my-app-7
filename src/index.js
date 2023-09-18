@@ -59,7 +59,7 @@ strongElement.innerHTML = `${temperature}`;
 function searchCity(city) {
 let cityInput = document.querySelector("#city-input").value;
 let apiKey = "e6c2364656962bdcb16bc352fc42569a";
-let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
+let apiUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
  axios.get(apiUrl).then(showTemperature);
 }
