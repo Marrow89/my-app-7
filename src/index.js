@@ -39,7 +39,6 @@ function showTemperature(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
-  let dateElement = document.querySelector("#date");
   let strongElement = document.querySelector("#temperature");
   let celsiusTemperature = Math.round(response.data.main.temp);
 
@@ -48,7 +47,6 @@ function showTemperature(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   temperature.innerHTML = Math.round(celsiusTemperature);
-  dateElement.innerHTML = currentDate(response.data.dt * 1000);
 
 iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 iconElement.setAttribute("alt", response.data.weather[0].description);
@@ -58,9 +56,8 @@ strongElement.innerHTML = `${temperature}`;
 
 
 function searchCity(city) {
-let cityInput = document.querySelector("#city-input").value;
-let apiKey = "6bfa54f242cbb59343d4e58db578dc61";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=metric`;
+let apiKey = "95fccd7ba44d9b658ta47a02aa43bo69";
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${cityInput}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showTemperature);
 }
 
