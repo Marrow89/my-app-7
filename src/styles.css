@@ -49,8 +49,11 @@ li {
     color: orange;
     background: #000;
 }
-.link {
-    position: relative;
+.link { 
+    font-size: 40px;
+    max-width: 600px; 
+        margin: 40px auto;
+        padding: 20px;
     text-align: center;
 }
 .weather-temperature strong {
