@@ -28,10 +28,7 @@ li {
     padding-bottom: 20px;
 }
 
-.row {
-    text-align: center;
-    padding: 30px;
-}
+
 
 .container {
     text-align: center;
@@ -50,10 +47,9 @@ li {
     background: #000;
 }
 .link { 
-    
     max-width: 600px; 
-        margin: 40px auto;
-        padding: 20px;
+    margin: 40px auto;
+    padding: 20px;
     text-align: center;
 }
 .weather-temperature strong {
@@ -75,5 +71,19 @@ li {
 }
 .description {
     font-display: uppercase;
+
+}
+.weather-forcast {
+    text-align: center;
+    color: orange;
+}
+
+.weather-forecast-date {
+
+
+}
+
+.weather-forecast-temperature-max {
+    font-weight: 700;
 
 }
