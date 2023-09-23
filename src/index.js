@@ -9,8 +9,7 @@ function currentDate(now) {
     currentMinute = `0${currentMinute}`;
   }
 
-
-  let days = [
+let days = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -29,6 +28,38 @@ function currentDate(now) {
   currentMinuteElement.textContent = currentMinute;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+days.forEach(function(day){
+
+  forecastHTML = 
+   forecastHTML + `
+          <div class="col-2">
+                <div class="weather-forecast-date"></div>
+                ${day}
+                <img
+                  src="https://cityweatherteller.netlify.app/img/cool.jpeg"
+                  alt=""
+                  width="38px"
+                />
+                <div class="weather-forecast-temperature">
+                  <span class="weather-forecast-temperature-max">99°</span>
+                  <span class="weather-forecast-temperature-min">76°</span>
+                </div>
+              
+          
+          </div>`;
+})
+
+   
+
+          forecastHTML = forecastHTML + `</div>`;
+
+          forecastElement.innerHTML = forecastHTML;
+}
 
 function showTemperature(response) {
 
@@ -103,3 +134,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Redding");
+displayForecast();
