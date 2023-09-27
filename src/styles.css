@@ -23,18 +23,19 @@ li {
     line-height: 23px;
 }
 
+li:first-letter {
+    text-transform: capitalize;
+}
+
 .search {
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-
-
 .container {
     text-align: center;
     position: relative;
     display: block;
-
 }
 
 .weather-homework {
@@ -69,21 +70,16 @@ li {
 .weather-temperature .active:hover {
     text-decoration: none;
 }
-.description {
-    font-display: uppercase;
 
-}
 .weather-forcast {
     text-align: center;
     color: orange;
 }
 
 .weather-forecast-date {
-
-
+    font-size: 16px;
 }
 
 .weather-forecast-temperature-max {
     font-weight: 700;
-
 }
