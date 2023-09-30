@@ -30,8 +30,6 @@ let currentDayElement = document.getElementById("currentDay");
 
 currentDate(new Date());
 
-
-
 function searchCity(event) {
   event.preventDefault();
   let cityElement = document.querySelector("#city");
@@ -39,13 +37,11 @@ function searchCity(event) {
   cityElement.innerHTML = cityInput.value;
 }
 
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=95fccd7ba44d9b658ta47a02aa43bo69&units=metric`;
-
-axios.get(apiUrl).then(showTemperature)
 
 function showTemperature(response) {
+  console.log(response.data);
 let h1 = document.querySelector("h1");
-  let temperature = Math.round(response.data.main.temp);
+  let temperature = Math.round(response.data.temperature.current);
   let cityInput = response.data.name;
   
   let descriptionElement = document.querySelector("#description");
@@ -56,12 +52,18 @@ let h1 = document.querySelector("h1");
   let celsiusTemperature = Math.round(response);
 
   temperature.innerHTML = Math.round(celsiusTemperature);
-  windElement.innerHTML = response;
-  descriptionElement.innerHTML = response;
-  humidityElement.innerHTML = response;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = response.data.temperature.humidity;
+  iconElement.innerHTML = response.data.condition.icon_url;
   }
 
-  let form = document.querySelector("#control-form");
+
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Tokyo&key=95fccd7ba44d9b658ta47a02aa43bo69&units=metric`;
+
+axios.get(apiUrl).then(showTemperature);
+
+  let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
 
@@ -91,5 +93,6 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
 
 
