@@ -36,13 +36,17 @@ function searchCity(event) {
   let cityInput = document.querySelector("#city-input").value;
   cityElement.innerHTML = cityInput.value;
 }
-
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input").value;
+  searchCity(city);
+}
 
 function showTemperature(response) {
   console.log(response.data);
 let h1 = document.querySelector("h1");
   let temperature = Math.round(response.data.temperature.current);
-  let cityInput = response.data.name;
+  let cityInput = response.data.city;
   
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
@@ -55,7 +59,7 @@ let h1 = document.querySelector("h1");
   windElement.innerHTML = Math.round(response.data.wind.speed);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
-  iconElement.innerHTML = response.data.condition.icon_url;
+  iconElement.innerHTML = response.data.condition.icon_url="http://shecodes-assets.s3.amazonaws.com/api/weath";
   }
 
 
