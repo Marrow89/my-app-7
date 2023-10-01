@@ -22,9 +22,9 @@
 <body>
     <div class="container">
       <div class="weather-homework">
-        <h1></h1>
+        <h1>Check The Weather</h1>
 
-        <form class="search-form" id="search-form">
+        <form class="mb-3" id="search-form">
           <input
             type="search"
             placeholder="Search City"
@@ -37,16 +37,12 @@
         </form>
         <h2 id="city"></h2>
 
-<span id="currentDay"></span>
-<span id="currentHour"></span>
-<span id="currentMinute"></span>
-       
         <div class="row">
           <div class="col-6">
             <div class="d-flex weather-temperature">
               <img src=".." alt="Clear" id="icon" class="float-left" />
 
-              <div>
+              <div class="col-6">
               <strong id="temperature"></strong><span class="units">
                   <a href="#" id="celsius-link" class="active">°C</a> |
                   <a href="#" id="fahrenheit-link">°F</a></span
@@ -56,9 +52,8 @@
           </div>
         </div>
         <div class="overview">
-        
-          <ul>
-               <li>Last updated: <span id="date"></span></li>
+        <ul>
+            <li>Last updated: <span id="date"></span></li>
             <li>Appears: <span id="description"></span></li>
             <li>Humidity: <span id="humidity"></span>%</li>
             <li>Wind: <span id="wind"></span> km/h</li>

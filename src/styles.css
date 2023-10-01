@@ -4,6 +4,7 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 h1 {
+   
     font-size: 36px;
     font-weight: 200;
     line-height: 27px;
@@ -33,6 +34,9 @@ li:first-letter {
 }
 
 .container {
+    max-width: 600px;
+        margin: 40px auto;
+        padding: 20px;
     text-align: center;
     position: relative;
     display: block;
@@ -42,8 +46,8 @@ li:first-letter {
     max-width: 600px;
     margin: 40px auto;
     padding: 20px;
-    border: 2px solid green;
-    border-radius: 5px;
+    border: 20px solid green;
+    border-radius: 50px;
     color: orange;
     background: #000;
 }
@@ -57,11 +61,16 @@ li:first-letter {
     font-size: 36px;
     line-height: 1;
     font-weight: 400;
-    padding-top: 20px;
+    
+}
+.weather-temperature img {
+    margin-right: 5px;
+  
 }
 .weather-temperature .units {
     position: relative;
-    top: -12px;
+   
+
 }
 .weather-temperature .active {
     color: orange;
@@ -82,4 +91,9 @@ li:first-letter {
 
 .weather-forecast-temperature-max {
     font-weight: 700;
+}
+.icon {
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: -15px;
 }

@@ -69,6 +69,8 @@ function handleSubmit(event) {
   let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
+searchCity("Tokyo");
+
 function displayFahrenheitTemperature(event) {
 event.preventDefault();
 let temperatureElement = document.querySelector("#temperature");
