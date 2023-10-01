@@ -30,12 +30,11 @@ let currentDayElement = document.getElementById("currentDay");
 
 currentDate(new Date());
 
-function searchCity(event) {
-  event.preventDefault();
-  let cityElement = document.querySelector("#city");
-  let cityInput = document.querySelector("#city-input").value;
-  cityElement.innerHTML = cityInput.value;
+function searchCity(city) {
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=95fccd7ba44d9b658ta47a02aa43bo69&units=metric`;
+axios.get(apiUrl).then(showTemperature);
 }
+
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
@@ -43,34 +42,25 @@ function handleSubmit(event) {
 }
 
 function showTemperature(response) {
-  console.log(response.data);
-let h1 = document.querySelector("h1");
-  let temperature = Math.round(response.data.temperature.current);
-  let cityInput = response.data.city;
-  
-  let descriptionElement = document.querySelector("#description");
+  let cityInput = document.querySelector("h1");
+  let temperature = document.querySelector("#temperature");
+   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
   
-  let celsiusTemperature = Math.round(response);
+  celsiusTemperature = Math.round(response.data.temperature.current);
 
+  cityInput.innerHTML = response.data.city;
   temperature.innerHTML = Math.round(celsiusTemperature);
   windElement.innerHTML = Math.round(response.data.wind.speed);
   descriptionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
-  iconElement.innerHTML = response.data.condition.icon_url="http://shecodes-assets.s3.amazonaws.com/api/weath";
-  }
-
-
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Tokyo&key=95fccd7ba44d9b658ta47a02aa43bo69&units=metric`;
-
-axios.get(apiUrl).then(showTemperature);
+  iconElement.setAttribute("src", response.data.condition.icon_url); 
+}
 
   let form = document.querySelector("#search-form");
-form.addEventListener("submit", searchCity);
-
-
+form.addEventListener("submit", handleSubmit);
 
 function displayFahrenheitTemperature(event) {
 event.preventDefault();
@@ -78,7 +68,7 @@ let temperatureElement = document.querySelector("#temperature");
 
 celsiusLink.classList.remove("active");
 fahrenheitLink.classList.add("active");
-let fahrenheitTemperature = (celsiusTemperature);
+let fahrenheitTemperature = celsiusTemperature;
 temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
