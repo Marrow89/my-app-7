@@ -1,34 +1,58 @@
-function currentDate(now) {
-  let currentDay = now.getDay();
-  let currentHour = now.getHours();
-  if(currentHour < 10) {
-    currentHour = `0${currentHour}`;
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
   }
-  let currentMinute = now.getMinutes();
-  if(currentMinute < 10) {
-    currentMinute = `0${currentMinute}`;
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
   }
 
-let days = [
+  let days = [
     "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
-];
-let currentDayElement = document.getElementById("currentDay");
-  currentDayElement.textContent = days[currentDay];
-
-  let currentHourElement = document.getElementById("currentHour");
-  currentHourElement.textContent = currentHour + ":";
-
-  let currentMinuteElement = document.getElementById("currentMinute");
-  currentMinuteElement.textContent = currentMinute;
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
 }
 
-currentDate(new Date());
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+
+function showTemperature(response) {
+  console.log(response);
+  let cityInput = document.querySelector("h1");
+  let temperature = document.querySelector("#temperature");
+   let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
+  
+  celsiusTemperature = Math.round(response.data.temperature.current);
+
+  cityInput.innerHTML = response.data.city;
+  temperature.innerHTML = Math.round(celsiusTemperature);
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = response.data.temperature.humidity;
+
+ dateElement.innerHTML = formatDate(response.data.time);
+
+  iconElement.setAttribute("src", response.data.condition.icon_url); 
+}
 
 function searchCity(city) {
 let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=95fccd7ba44d9b658ta47a02aa43bo69&units=metric`;
@@ -41,23 +65,6 @@ function handleSubmit(event) {
   searchCity(city);
 }
 
-function showTemperature(response) {
-  let cityInput = document.querySelector("h1");
-  let temperature = document.querySelector("#temperature");
-   let descriptionElement = document.querySelector("#description");
-  let humidityElement = document.querySelector("#humidity");
-  let windElement = document.querySelector("#wind");
-  let iconElement = document.querySelector("#icon");
-  
-  celsiusTemperature = Math.round(response.data.temperature.current);
-
-  cityInput.innerHTML = response.data.city;
-  temperature.innerHTML = Math.round(celsiusTemperature);
-  windElement.innerHTML = Math.round(response.data.wind.speed);
-  descriptionElement.innerHTML = response.data.condition.description;
-  humidityElement.innerHTML = response.data.temperature.humidity;
-  iconElement.setAttribute("src", response.data.condition.icon_url); 
-}
 
   let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
