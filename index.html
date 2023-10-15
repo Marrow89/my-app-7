@@ -16,15 +16,14 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
-    
     <link rel="stylesheet" href="src/styles.css" />
   </head>
 <body>
     <div class="container">
       <div class="weather-homework">
-        <h1>Check The Weather</h1>
-
-        <form class="mb-3" id="search-form">
+      <form class="mb-3" id="search-form">
+          <div class="row">
+            <div class="col-12">
           <input
             type="search"
             placeholder="Search City"
@@ -34,16 +33,18 @@
             id="city-input"
           />
           <input type="submit" />
+          </div>
+          </div>
         </form>
-        <h2 id="city"></h2>
-
+        <div class="overview">
+<h1 id="city"></h1>
         <div class="row">
-          <div class="col-6">
+          <div class="col-3">
             <div class="d-flex weather-temperature">
-              <img src=".." alt="Clear" id="icon" class="float-left" />
-
-              <div class="col-6">
-              <strong id="temperature"></strong><span class="units">
+              <img src=".." alt="Clear" id="icon" />
+<div class="col-4">
+             </span><strong id="temperature"></strong> 
+             <span class="units">
                   <a href="#" id="celsius-link" class="active">°C</a> |
                   <a href="#" id="fahrenheit-link">°F</a></span
                 >
@@ -51,7 +52,7 @@
             </div>
           </div>
         </div>
-        <div class="overview">
+       
         <ul>
             <li>Last updated: <span id="date"></span></li>
             <li>Appears: <span id="description"></span></li>
